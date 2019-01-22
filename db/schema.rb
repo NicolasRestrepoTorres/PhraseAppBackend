@@ -13,7 +13,11 @@
 ActiveRecord::Schema.define(version: 20190116191703) do
 
   create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "answer_content"
+    t.string "title"
+    t.text "content"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
+    t.string "language", default: "en", null: false
     t.bigint "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -21,15 +25,22 @@ ActiveRecord::Schema.define(version: 20190116191703) do
   end
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "title", null: false
     t.string "topic"
-    t.string "banner"
+    t.string "section"
+    t.text "content", null: false
+    t.string "language", null: false
     t.string "original_language"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "question_content"
+    t.string "title"
+    t.text "content"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
+    t.string "language", default: "en", null: false
     t.bigint "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
