@@ -15,10 +15,10 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: 123
-  #host: knowledge_base_db
-  #socket: /var/run/mysqld/mysqld.sock
-  host: 127.0.0.1
-  port: 3306
+  host: knowledge_base_db
+  socket: /var/run/mysqld/mysqld.sock
+  #host: 127.0.0.1
+  #port: 3306
   #To run locally
   #host: localhost || 127.0.0.1
   #port: 3306
