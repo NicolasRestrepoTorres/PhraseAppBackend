@@ -15,12 +15,16 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: 123
+
   #To deploy in Docker
   #host: knowledge_base_db
   #socket: /var/run/mysqld/mysqld.sock
   #To deploy locally
-  host: 127.0.0.1
-  port: 3306
+  #host: 127.0.0.1
+  #port: 3306
+  #To deploy in Docker
+  host: knowledge_base_db
+  socket: /var/run/mysqld/mysqld.sock
 
 
 development:
